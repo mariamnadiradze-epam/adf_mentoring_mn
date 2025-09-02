@@ -1,0 +1,18 @@
+{
+	"name": "Module4Source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageAustralia",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "datafiles"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

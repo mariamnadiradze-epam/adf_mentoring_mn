@@ -1,0 +1,83 @@
+{
+	"name": "ds_csv_generic",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azurementoringdatalakemn",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"p_fileSystem": {
+				"type": "string"
+			},
+			"p_directory": {
+				"type": "string"
+			},
+			"p_firstRowAsHeader": {
+				"type": "bool"
+			},
+			"p_encodingName": {
+				"type": "string"
+			},
+			"p_columnDelimiter": {
+				"type": "string"
+			},
+			"p_rowDelimiter": {
+				"type": "string"
+			},
+			"p_quoteChar": {
+				"type": "string"
+			},
+			"p_escapeChar": {
+				"type": "string"
+			},
+			"p_compression": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@dataset().p_directory",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().p_fileSystem",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": {
+				"value": "@dataset().p_columnDelimiter",
+				"type": "Expression"
+			},
+			"rowDelimiter": {
+				"value": "@if(equals(toLower(dataset().p_rowDelimiter),'cr'), base64ToString('DQ=='), base64ToString('Cg=='))\n",
+				"type": "Expression"
+			},
+			"compressionCodec": {
+				"value": "@dataset().p_compression",
+				"type": "Expression"
+			},
+			"encodingName": {
+				"value": "@dataset().p_encodingName",
+				"type": "Expression"
+			},
+			"escapeChar": {
+				"value": "@dataset().p_escapeChar",
+				"type": "Expression"
+			},
+			"firstRowAsHeader": {
+				"value": "@dataset().p_firstRowAsHeader",
+				"type": "Expression"
+			},
+			"quoteChar": {
+				"value": "@dataset().p_quoteChar",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

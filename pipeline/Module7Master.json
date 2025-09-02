@@ -1,0 +1,72 @@
+{
+	"name": "Module7Master",
+	"properties": {
+		"activities": [
+			{
+				"name": "CopyDataBlobToADLS",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Module7",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Populate3NFTables",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "CopyDataBlobToADLS",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Module7-3",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "ArchiveData",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Populate3NFTables",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Module7-2",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2025-08-11T13:03:23Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

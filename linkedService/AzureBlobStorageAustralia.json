@@ -1,0 +1,12 @@
+{
+	"name": "AzureBlobStorageAustralia",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=azurementoringaumn;EndpointSuffix=core.windows.net;",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEFBNjA5MjVGLTlBNzQtNDdFMS04N0YyLTM1QTM2M0RDRjg0NV80MjNmZWI1Yy05OGNhLTRkMTktYjZiYi05MTk0Mjg1ZDlmMGYiDQp9"
+		}
+	}
+}

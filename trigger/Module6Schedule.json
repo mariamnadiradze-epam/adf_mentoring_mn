@@ -1,0 +1,17 @@
+{
+	"name": "Module6Schedule",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 15,
+				"startTime": "2025-07-23T15:01:00",
+				"timeZone": "Georgian Standard Time"
+			}
+		}
+	}
+}

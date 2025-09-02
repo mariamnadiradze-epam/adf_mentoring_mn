@@ -1,0 +1,13 @@
+{
+	"name": "ds_sql_query",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDb_Movies",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

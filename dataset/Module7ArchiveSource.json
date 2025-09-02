@@ -1,0 +1,19 @@
+{
+	"name": "Module7ArchiveSource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azurementoringdatalakemn",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "Online",
+				"fileSystem": "raw"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

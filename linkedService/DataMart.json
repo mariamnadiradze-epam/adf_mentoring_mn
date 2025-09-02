@@ -1,0 +1,25 @@
+{
+	"name": "DataMart",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "azure-mentoring-mn.database.windows.net",
+			"database": "DataMart",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "mariam-nadiradze",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "mentoring_key_vault_mn",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "mariam-nadiradze",
+				"secretVersion": "db252892dad240d2816183b94c0acdcd"
+			}
+		}
+	}
+}
